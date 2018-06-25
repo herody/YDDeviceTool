@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'YDDeviceTool_Example' do
+  pod 'YDDeviceTool', :path => '../'
+
+  target 'YDDeviceTool_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
