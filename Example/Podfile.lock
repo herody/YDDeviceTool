@@ -1,0 +1,16 @@
+PODS:
+  - YDDeviceTool (0.1.0)
+
+DEPENDENCIES:
+  - YDDeviceTool (from `../`)
+
+EXTERNAL SOURCES:
+  YDDeviceTool:
+    :path: ../
+
+SPEC CHECKSUMS:
+  YDDeviceTool: 2276c874222ef99460467935e3ef429b61402d95
+
+PODFILE CHECKSUM: a357b305bf7cdd58985e79d41ee58000d831dc32
+
+COCOAPODS: 1.4.0
