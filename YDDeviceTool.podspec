@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'YDDeviceTool'
   s.version          = '0.1.0'
-  s.summary          = 'YDDeviceTool is a tool for obtaining device information.'
+  s.summary          = 'YDDeviceTool 是一个用来获取设备信息的工具.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,10 +18,10 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+YDDeviceTool 是一个工具，用来获取设备的名称、类型、ip等一些相关信息.
                        DESC
 
-  s.homepage         = 'https://github.com/houyadi/YDDeviceTool'
+  s.homepage         = 'https://github.com/herody/YDDeviceTool.git'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'houyadi' => '314622981@qq.com' }
