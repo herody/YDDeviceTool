@@ -160,13 +160,13 @@
     UIDeviceBatteryState batteryState = [UIDevice currentDevice].batteryState;
     switch (batteryState) {
         case UIDeviceBatteryStateUnplugged:
-            return 0;
-        case UIDeviceBatteryStateCharging:
             return 1;
-        case UIDeviceBatteryStateFull:
+        case UIDeviceBatteryStateCharging:
             return 2;
-        default:
+        case UIDeviceBatteryStateFull:
             return 3;
+        default:
+            return 0;
     }
 }
 

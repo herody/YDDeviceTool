@@ -7,9 +7,12 @@
 
 ## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
+```
+NSLog(@"设备名称是：%@", [YDDeviceTool getDeviceName]);
+NSLog(@"设备类型是：%@", [YDDeviceTool getDeviceType]);
+NSLog(@"设备外网ip是：%@", [YDDeviceTool getWANIPAddress]);
+NSLog(@"设备内网ip是：%@", [YDDeviceTool getLANIPAddress]);
+```
 
 ## Installation
 
