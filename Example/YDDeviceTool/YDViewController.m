@@ -7,6 +7,7 @@
 //
 
 #import "YDViewController.h"
+#import <YDDeviceTool/YDDeviceTool.h>
 
 @interface YDViewController ()
 
@@ -18,6 +19,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    NSLog(@"设备名称是：%@", [YDDeviceTool getDeviceName]);
+    NSLog(@"设备类型是：%@", [YDDeviceTool getDeviceType]);
+    NSLog(@"设备外网ip是：%@", [YDDeviceTool getWANIPAddress]);
+    NSLog(@"设备内网ip是：%@", [YDDeviceTool getLANIPAddress]);
 }
 
 - (void)didReceiveMemoryWarning
