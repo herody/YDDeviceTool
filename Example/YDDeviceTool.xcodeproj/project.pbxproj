@@ -23,16 +23,17 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		B42B3CD22A8F46680084DAA1 /* YDBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B42B3CD12A8F46680084DAA1 /* YDBasicViewController.m */; };
-		B42B3CD92A8F54AA0084DAA1 /* ContactModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B42B3CD52A8F54AA0084DAA1 /* ContactModel.m */; };
-		B42B3CDA2A8F54AA0084DAA1 /* ContactManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B42B3CD62A8F54AA0084DAA1 /* ContactManager.m */; };
-		B42B3CE02A8F557A0084DAA1 /* TLAuthHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B42B3CDE2A8F557A0084DAA1 /* TLAuthHelper.m */; };
-		B42B3D932A8F57ED0084DAA1 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B42B3D922A8F57ED0084DAA1 /* BaseModel.m */; };
-		B42B3DA62A8F5A1A0084DAA1 /* ContactAuthVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B42B3DA42A8F5A1A0084DAA1 /* ContactAuthVC.m */; };
-		B42B3DA92A8F64A30084DAA1 /* TLAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = B42B3DA72A8F64A30084DAA1 /* TLAlert.m */; };
-		B42B3DAC2A8F65490084DAA1 /* NSString+Check.m in Sources */ = {isa = PBXBuildFile; fileRef = B42B3DAB2A8F65490084DAA1 /* NSString+Check.m */; };
 		B42B3DAF2A8F68310084DAA1 /* BasicInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B42B3DAE2A8F68310084DAA1 /* BasicInfo.m */; };
-		B42B3DB52A8F75620084DAA1 /* YDLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B42B3DB42A8F75620084DAA1 /* YDLocationViewController.m */; };
+		B42B3DC02A8F77CB0084DAA1 /* NSString+Check.m in Sources */ = {isa = PBXBuildFile; fileRef = B42B3DB72A8F77CB0084DAA1 /* NSString+Check.m */; };
+		B42B3DC12A8F77CB0084DAA1 /* TLAuthHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B42B3DB92A8F77CB0084DAA1 /* TLAuthHelper.m */; };
+		B42B3DC22A8F77CB0084DAA1 /* DXLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B42B3DBE2A8F77CB0084DAA1 /* DXLocationManager.m */; };
+		B42B3DC32A8F77CB0084DAA1 /* TLAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = B42B3DBF2A8F77CB0084DAA1 /* TLAlert.m */; };
+		B42B3DCA2A8F787A0084DAA1 /* YDLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B42B3DC52A8F787A0084DAA1 /* YDLocationViewController.m */; };
+		B42B3DCB2A8F787A0084DAA1 /* YDBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B42B3DC82A8F787A0084DAA1 /* YDBasicViewController.m */; };
+		B42B3DD62A8F78F80084DAA1 /* ContactModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B42B3DCE2A8F78F80084DAA1 /* ContactModel.m */; };
+		B42B3DD72A8F78F80084DAA1 /* ContactManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B42B3DCF2A8F78F80084DAA1 /* ContactManager.m */; };
+		B42B3DD82A8F78F80084DAA1 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B42B3DD02A8F78F80084DAA1 /* BaseModel.m */; };
+		B42B3DD92A8F78F80084DAA1 /* ContactAuthVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B42B3DD42A8F78F80084DAA1 /* ContactAuthVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,26 +73,28 @@
 		8819B28059EB99AC86A6C74F /* Pods-YDDeviceTool_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YDDeviceTool_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YDDeviceTool_Example/Pods-YDDeviceTool_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		8E800100110260F19348ECC0 /* Pods-YDDeviceTool_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YDDeviceTool_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-YDDeviceTool_Example/Pods-YDDeviceTool_Example.release.xcconfig"; sourceTree = "<group>"; };
 		9DE8E676CA8321B6CCB424D0 /* Pods_YDDeviceTool_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YDDeviceTool_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B42B3CD02A8F46680084DAA1 /* YDBasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDBasicViewController.h; sourceTree = "<group>"; };
-		B42B3CD12A8F46680084DAA1 /* YDBasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDBasicViewController.m; sourceTree = "<group>"; };
-		B42B3CD52A8F54AA0084DAA1 /* ContactModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactModel.m; sourceTree = "<group>"; };
-		B42B3CD62A8F54AA0084DAA1 /* ContactManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactManager.m; sourceTree = "<group>"; };
-		B42B3CD72A8F54AA0084DAA1 /* ContactModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactModel.h; sourceTree = "<group>"; };
-		B42B3CD82A8F54AA0084DAA1 /* ContactManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactManager.h; sourceTree = "<group>"; };
-		B42B3CDE2A8F557A0084DAA1 /* TLAuthHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLAuthHelper.m; sourceTree = "<group>"; };
-		B42B3CDF2A8F557A0084DAA1 /* TLAuthHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLAuthHelper.h; sourceTree = "<group>"; };
-		B42B3D912A8F57ED0084DAA1 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
-		B42B3D922A8F57ED0084DAA1 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
-		B42B3DA42A8F5A1A0084DAA1 /* ContactAuthVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactAuthVC.m; sourceTree = "<group>"; };
-		B42B3DA52A8F5A1A0084DAA1 /* ContactAuthVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactAuthVC.h; sourceTree = "<group>"; };
-		B42B3DA72A8F64A30084DAA1 /* TLAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLAlert.m; sourceTree = "<group>"; };
-		B42B3DA82A8F64A30084DAA1 /* TLAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLAlert.h; sourceTree = "<group>"; };
-		B42B3DAA2A8F65490084DAA1 /* NSString+Check.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Check.h"; sourceTree = "<group>"; };
-		B42B3DAB2A8F65490084DAA1 /* NSString+Check.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Check.m"; sourceTree = "<group>"; };
 		B42B3DAD2A8F68310084DAA1 /* BasicInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BasicInfo.h; sourceTree = "<group>"; };
 		B42B3DAE2A8F68310084DAA1 /* BasicInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BasicInfo.m; sourceTree = "<group>"; };
-		B42B3DB32A8F75620084DAA1 /* YDLocationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDLocationViewController.h; sourceTree = "<group>"; };
-		B42B3DB42A8F75620084DAA1 /* YDLocationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDLocationViewController.m; sourceTree = "<group>"; };
+		B42B3DB72A8F77CB0084DAA1 /* NSString+Check.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Check.m"; sourceTree = "<group>"; };
+		B42B3DB82A8F77CB0084DAA1 /* TLAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLAlert.h; sourceTree = "<group>"; };
+		B42B3DB92A8F77CB0084DAA1 /* TLAuthHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLAuthHelper.m; sourceTree = "<group>"; };
+		B42B3DBA2A8F77CB0084DAA1 /* NSString+Check.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Check.h"; sourceTree = "<group>"; };
+		B42B3DBB2A8F77CB0084DAA1 /* TLAuthHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLAuthHelper.h; sourceTree = "<group>"; };
+		B42B3DBD2A8F77CB0084DAA1 /* DXLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXLocationManager.h; sourceTree = "<group>"; };
+		B42B3DBE2A8F77CB0084DAA1 /* DXLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXLocationManager.m; sourceTree = "<group>"; };
+		B42B3DBF2A8F77CB0084DAA1 /* TLAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLAlert.m; sourceTree = "<group>"; };
+		B42B3DC52A8F787A0084DAA1 /* YDLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDLocationViewController.m; sourceTree = "<group>"; };
+		B42B3DC62A8F787A0084DAA1 /* YDLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDLocationViewController.h; sourceTree = "<group>"; };
+		B42B3DC82A8F787A0084DAA1 /* YDBasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDBasicViewController.m; sourceTree = "<group>"; };
+		B42B3DC92A8F787A0084DAA1 /* YDBasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDBasicViewController.h; sourceTree = "<group>"; };
+		B42B3DCE2A8F78F80084DAA1 /* ContactModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactModel.m; sourceTree = "<group>"; };
+		B42B3DCF2A8F78F80084DAA1 /* ContactManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactManager.m; sourceTree = "<group>"; };
+		B42B3DD02A8F78F80084DAA1 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
+		B42B3DD12A8F78F80084DAA1 /* ContactModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactModel.h; sourceTree = "<group>"; };
+		B42B3DD22A8F78F80084DAA1 /* ContactManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactManager.h; sourceTree = "<group>"; };
+		B42B3DD32A8F78F80084DAA1 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
+		B42B3DD42A8F78F80084DAA1 /* ContactAuthVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactAuthVC.m; sourceTree = "<group>"; };
+		B42B3DD52A8F78F80084DAA1 /* ContactAuthVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactAuthVC.h; sourceTree = "<group>"; };
 		C27736F064BE28D7C11CA63D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		EC73D6D1A8528FBCEEC7E247 /* Pods-YDDeviceTool_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YDDeviceTool_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YDDeviceTool_Tests/Pods-YDDeviceTool_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -159,18 +162,18 @@
 		6003F593195388D20070C39A /* Example for YDDeviceTool */ = {
 			isa = PBXGroup;
 			children = (
-				B42B3DB22A8F75530084DAA1 /* Location */,
-				B42B3DB12A8F74C10084DAA1 /* Tools */,
-				B42B3DB02A8F74B10084DAA1 /* Device */,
-				B42B3CD32A8F549D0084DAA1 /* Contract */,
-				6003F59C195388D20070C39A /* YDAppDelegate.h */,
-				6003F59D195388D20070C39A /* YDAppDelegate.m */,
-				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
-				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
-				6003F5A8195388D20070C39A /* Images.xcassets */,
-				6003F594195388D20070C39A /* Supporting Files */,
 				B42B3DAD2A8F68310084DAA1 /* BasicInfo.h */,
 				B42B3DAE2A8F68310084DAA1 /* BasicInfo.m */,
+				B42B3DCC2A8F78F80084DAA1 /* Contract */,
+				B42B3DC72A8F787A0084DAA1 /* Device */,
+				6003F5A8195388D20070C39A /* Images.xcassets */,
+				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
+				B42B3DC42A8F787A0084DAA1 /* Location */,
+				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
+				6003F594195388D20070C39A /* Supporting Files */,
+				B42B3DB62A8F77CB0084DAA1 /* Tools */,
+				6003F59C195388D20070C39A /* YDAppDelegate.h */,
+				6003F59D195388D20070C39A /* YDAppDelegate.m */,
 			);
 			name = "Example for YDDeviceTool";
 			path = YDDeviceTool;
@@ -227,58 +230,68 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		B42B3CD32A8F549D0084DAA1 /* Contract */ = {
+		B42B3DB62A8F77CB0084DAA1 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				B42B3DA42A8F5A1A0084DAA1 /* ContactAuthVC.m */,
-				B42B3DA52A8F5A1A0084DAA1 /* ContactAuthVC.h */,
-				B42B3CD42A8F54AA0084DAA1 /* Contact */,
+				B42B3DB72A8F77CB0084DAA1 /* NSString+Check.m */,
+				B42B3DB82A8F77CB0084DAA1 /* TLAlert.h */,
+				B42B3DB92A8F77CB0084DAA1 /* TLAuthHelper.m */,
+				B42B3DBA2A8F77CB0084DAA1 /* NSString+Check.h */,
+				B42B3DBB2A8F77CB0084DAA1 /* TLAuthHelper.h */,
+				B42B3DBC2A8F77CB0084DAA1 /* DXLocationManager */,
+				B42B3DBF2A8F77CB0084DAA1 /* TLAlert.m */,
 			);
-			name = Contract;
+			path = Tools;
 			sourceTree = "<group>";
 		};
-		B42B3CD42A8F54AA0084DAA1 /* Contact */ = {
+		B42B3DBC2A8F77CB0084DAA1 /* DXLocationManager */ = {
 			isa = PBXGroup;
 			children = (
-				B42B3D912A8F57ED0084DAA1 /* BaseModel.h */,
-				B42B3D922A8F57ED0084DAA1 /* BaseModel.m */,
-				B42B3CD82A8F54AA0084DAA1 /* ContactManager.h */,
-				B42B3CD62A8F54AA0084DAA1 /* ContactManager.m */,
-				B42B3CD72A8F54AA0084DAA1 /* ContactModel.h */,
-				B42B3CD52A8F54AA0084DAA1 /* ContactModel.m */,
+				B42B3DBD2A8F77CB0084DAA1 /* DXLocationManager.h */,
+				B42B3DBE2A8F77CB0084DAA1 /* DXLocationManager.m */,
+			);
+			path = DXLocationManager;
+			sourceTree = "<group>";
+		};
+		B42B3DC42A8F787A0084DAA1 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				B42B3DC52A8F787A0084DAA1 /* YDLocationViewController.m */,
+				B42B3DC62A8F787A0084DAA1 /* YDLocationViewController.h */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		B42B3DC72A8F787A0084DAA1 /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				B42B3DC82A8F787A0084DAA1 /* YDBasicViewController.m */,
+				B42B3DC92A8F787A0084DAA1 /* YDBasicViewController.h */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
+		B42B3DCC2A8F78F80084DAA1 /* Contract */ = {
+			isa = PBXGroup;
+			children = (
+				B42B3DCD2A8F78F80084DAA1 /* Contact */,
+				B42B3DD52A8F78F80084DAA1 /* ContactAuthVC.h */,
+				B42B3DD42A8F78F80084DAA1 /* ContactAuthVC.m */,
+			);
+			path = Contract;
+			sourceTree = "<group>";
+		};
+		B42B3DCD2A8F78F80084DAA1 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				B42B3DD32A8F78F80084DAA1 /* BaseModel.h */,
+				B42B3DD02A8F78F80084DAA1 /* BaseModel.m */,
+				B42B3DD22A8F78F80084DAA1 /* ContactManager.h */,
+				B42B3DCF2A8F78F80084DAA1 /* ContactManager.m */,
+				B42B3DD12A8F78F80084DAA1 /* ContactModel.h */,
+				B42B3DCE2A8F78F80084DAA1 /* ContactModel.m */,
 			);
 			path = Contact;
-			sourceTree = "<group>";
-		};
-		B42B3DB02A8F74B10084DAA1 /* Device */ = {
-			isa = PBXGroup;
-			children = (
-				B42B3CD02A8F46680084DAA1 /* YDBasicViewController.h */,
-				B42B3CD12A8F46680084DAA1 /* YDBasicViewController.m */,
-			);
-			name = Device;
-			sourceTree = "<group>";
-		};
-		B42B3DB12A8F74C10084DAA1 /* Tools */ = {
-			isa = PBXGroup;
-			children = (
-				B42B3DAA2A8F65490084DAA1 /* NSString+Check.h */,
-				B42B3DAB2A8F65490084DAA1 /* NSString+Check.m */,
-				B42B3DA82A8F64A30084DAA1 /* TLAlert.h */,
-				B42B3DA72A8F64A30084DAA1 /* TLAlert.m */,
-				B42B3CDF2A8F557A0084DAA1 /* TLAuthHelper.h */,
-				B42B3CDE2A8F557A0084DAA1 /* TLAuthHelper.m */,
-			);
-			name = Tools;
-			sourceTree = "<group>";
-		};
-		B42B3DB22A8F75530084DAA1 /* Location */ = {
-			isa = PBXGroup;
-			children = (
-				B42B3DB32A8F75620084DAA1 /* YDLocationViewController.h */,
-				B42B3DB42A8F75620084DAA1 /* YDLocationViewController.m */,
-			);
-			name = Location;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -441,18 +454,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B42B3CD22A8F46680084DAA1 /* YDBasicViewController.m in Sources */,
+				B42B3DCB2A8F787A0084DAA1 /* YDBasicViewController.m in Sources */,
+				B42B3DD72A8F78F80084DAA1 /* ContactManager.m in Sources */,
+				B42B3DC32A8F77CB0084DAA1 /* TLAlert.m in Sources */,
+				B42B3DCA2A8F787A0084DAA1 /* YDLocationViewController.m in Sources */,
 				6003F59E195388D20070C39A /* YDAppDelegate.m in Sources */,
-				B42B3DA62A8F5A1A0084DAA1 /* ContactAuthVC.m in Sources */,
-				B42B3CE02A8F557A0084DAA1 /* TLAuthHelper.m in Sources */,
-				B42B3DAC2A8F65490084DAA1 /* NSString+Check.m in Sources */,
+				B42B3DD62A8F78F80084DAA1 /* ContactModel.m in Sources */,
+				B42B3DD82A8F78F80084DAA1 /* BaseModel.m in Sources */,
+				B42B3DD92A8F78F80084DAA1 /* ContactAuthVC.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
-				B42B3DA92A8F64A30084DAA1 /* TLAlert.m in Sources */,
+				B42B3DC02A8F77CB0084DAA1 /* NSString+Check.m in Sources */,
 				B42B3DAF2A8F68310084DAA1 /* BasicInfo.m in Sources */,
-				B42B3CDA2A8F54AA0084DAA1 /* ContactManager.m in Sources */,
-				B42B3D932A8F57ED0084DAA1 /* BaseModel.m in Sources */,
-				B42B3DB52A8F75620084DAA1 /* YDLocationViewController.m in Sources */,
-				B42B3CD92A8F54AA0084DAA1 /* ContactModel.m in Sources */,
+				B42B3DC22A8F77CB0084DAA1 /* DXLocationManager.m in Sources */,
+				B42B3DC12A8F77CB0084DAA1 /* TLAuthHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
