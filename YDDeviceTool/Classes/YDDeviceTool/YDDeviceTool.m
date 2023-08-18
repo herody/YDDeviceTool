@@ -20,6 +20,8 @@
 #import <SystemConfiguration/CaptiveNetwork.h>
 #import <AVFoundation/AVFoundation.h>
 
+#include <mach/mach.h> // 获取CPU信息所需要引入的头文件
+
 @implementation YDDeviceTool
 
 //获取idfa
@@ -131,22 +133,6 @@
 + (NSString *)getDeviceName
 {
     return [UIDevice currentDevice].name;
-}
-
-//获取磁盘大小
-+ (long)getTotalDiskSize
-{
-    NSDictionary *systemAttributes = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:nil];
-    NSNumber *diskTotalSize = [systemAttributes objectForKey:NSFileSystemSize];
-    return (long)(diskTotalSize.floatValue / 1024.f / 1024.f);
-}
-
-//获取磁盘剩余空间
-+ (long)getUsableDiskSize
-{
-    NSDictionary *systemAttributes = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:nil];
-    NSNumber *diskFreeSize = [systemAttributes objectForKey:NSFileSystemFreeSize];
-    return (long)(diskFreeSize.floatValue / 1024.f / 1024.f);
 }
 
 //获取电量
@@ -412,6 +398,190 @@
         return YES;
     }
     return NO;
+}
+
+
+
+
+
+// ==================
+
+
+#pragma mark - Disk
++ (NSString *)getApplicationSize {
+    unsigned long long documentSize   =  [self _getSizeOfFolder:[self _getDocumentPath]];
+    unsigned long long librarySize   =  [self _getSizeOfFolder:[self _getLibraryPath]];
+    unsigned long long cacheSize =  [self _getSizeOfFolder:[self _getCachePath]];
+    
+    unsigned long long total = documentSize + librarySize + cacheSize;
+    
+    NSString *applicationSize = [NSByteCountFormatter stringFromByteCount:total countStyle:NSByteCountFormatterCountStyleFile];
+    return applicationSize;
+}
+
++ (int64_t)getTotalDiskSpace {
+    NSError *error = nil;
+    NSDictionary *attrs = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:&error];
+    if (error) return -1;
+    int64_t space =  [[attrs objectForKey:NSFileSystemSize] longLongValue];
+    if (space < 0) space = -1;
+    return space;
+}
+
++ (int64_t)getFreeDiskSpace {
+    
+//    if (@available(iOS 11.0, *)) {
+//        NSError *error = nil;
+//        NSURL *testURL = [NSURL URLWithString:NSHomeDirectory()];
+//
+//        NSDictionary *dict = [testURL resourceValuesForKeys:@[NSURLVolumeAvailableCapacityForImportantUsageKey] error:&error];
+//
+//        return (int64_t)dict[NSURLVolumeAvailableCapacityForImportantUsageKey];
+//
+//
+//    } else {
+        NSError *error = nil;
+        NSDictionary *attrs = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:&error];
+        if (error) return -1;
+        int64_t space =  [[attrs objectForKey:NSFileSystemFreeSize] longLongValue];
+        if (space < 0) space = -1;
+        return space;
+//    }
+    
+}
+
++ (int64_t)getUsedDiskSpace {
+    int64_t totalDisk = [self getTotalDiskSpace];
+    int64_t freeDisk = [self getFreeDiskSpace];
+    if (totalDisk < 0 || freeDisk < 0) return -1;
+    int64_t usedDisk = totalDisk - freeDisk;
+    if (usedDisk < 0) usedDisk = -1;
+    return usedDisk;
+}
+
+#pragma mark - Memory
++ (int64_t)getTotalMemory {
+    int64_t totalMemory = [[NSProcessInfo processInfo] physicalMemory];
+    if (totalMemory < -1) totalMemory = -1;
+    return totalMemory;
+}
+
++ (int64_t)getActiveMemory {
+    mach_port_t host_port = mach_host_self();
+    mach_msg_type_number_t host_size = sizeof(vm_statistics_data_t) / sizeof(integer_t);
+    vm_size_t page_size;
+    vm_statistics_data_t vm_stat;
+    kern_return_t kern;
+    
+    kern = host_page_size(host_port, &page_size);
+    if (kern != KERN_SUCCESS) return -1;
+    kern = host_statistics(host_port, HOST_VM_INFO, (host_info_t)&vm_stat, &host_size);
+    if (kern != KERN_SUCCESS) return -1;
+    return vm_stat.active_count * page_size;
+}
+
++ (int64_t)getInActiveMemory {
+    mach_port_t host_port = mach_host_self();
+    mach_msg_type_number_t host_size = sizeof(vm_statistics_data_t) / sizeof(integer_t);
+    vm_size_t page_size;
+    vm_statistics_data_t vm_stat;
+    kern_return_t kern;
+    
+    kern = host_page_size(host_port, &page_size);
+    if (kern != KERN_SUCCESS) return -1;
+    kern = host_statistics(host_port, HOST_VM_INFO, (host_info_t)&vm_stat, &host_size);
+    if (kern != KERN_SUCCESS) return -1;
+    return vm_stat.inactive_count * page_size;
+}
+
++ (int64_t)getFreeMemory {
+    mach_port_t host_port = mach_host_self();
+    mach_msg_type_number_t host_size = sizeof(vm_statistics_data_t) / sizeof(integer_t);
+    vm_size_t page_size;
+    vm_statistics_data_t vm_stat;
+    kern_return_t kern;
+    
+    kern = host_page_size(host_port, &page_size);
+    if (kern != KERN_SUCCESS) return -1;
+    kern = host_statistics(host_port, HOST_VM_INFO, (host_info_t)&vm_stat, &host_size);
+    if (kern != KERN_SUCCESS) return -1;
+    return vm_stat.free_count * page_size;
+}
+
++ (int64_t)getUsedMemory {
+    mach_port_t host_port = mach_host_self();
+    mach_msg_type_number_t host_size = sizeof(vm_statistics_data_t) / sizeof(integer_t);
+    vm_size_t page_size;
+    vm_statistics_data_t vm_stat;
+    kern_return_t kern;
+    
+    kern = host_page_size(host_port, &page_size);
+    if (kern != KERN_SUCCESS) return -1;
+    kern = host_statistics(host_port, HOST_VM_INFO, (host_info_t)&vm_stat, &host_size);
+    if (kern != KERN_SUCCESS) return -1;
+    return page_size * (vm_stat.active_count + vm_stat.inactive_count + vm_stat.wire_count);
+}
+
++ (int64_t)getWiredMemory {
+    mach_port_t host_port = mach_host_self();
+    mach_msg_type_number_t host_size = sizeof(vm_statistics_data_t) / sizeof(integer_t);
+    vm_size_t page_size;
+    vm_statistics_data_t vm_stat;
+    kern_return_t kern;
+    
+    kern = host_page_size(host_port, &page_size);
+    if (kern != KERN_SUCCESS) return -1;
+    kern = host_statistics(host_port, HOST_VM_INFO, (host_info_t)&vm_stat, &host_size);
+    if (kern != KERN_SUCCESS) return -1;
+    return vm_stat.wire_count * page_size;
+}
+
++ (int64_t)getPurgableMemory {
+    mach_port_t host_port = mach_host_self();
+    mach_msg_type_number_t host_size = sizeof(vm_statistics_data_t) / sizeof(integer_t);
+    vm_size_t page_size;
+    vm_statistics_data_t vm_stat;
+    kern_return_t kern;
+    
+    kern = host_page_size(host_port, &page_size);
+    if (kern != KERN_SUCCESS) return -1;
+    kern = host_statistics(host_port, HOST_VM_INFO, (host_info_t)&vm_stat, &host_size);
+    if (kern != KERN_SUCCESS) return -1;
+    return vm_stat.purgeable_count * page_size;
+}
+
+
+#pragma mark -  Method
++ (NSString *)_getDocumentPath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *basePath = [paths firstObject];
+    return basePath;
+}
+
++ (NSString *)_getLibraryPath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+    NSString *basePath = [paths firstObject];
+    return basePath;
+}
+
++ (NSString *)_getCachePath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString *basePath = [paths firstObject];
+    return basePath;
+}
+
++ (unsigned long long)_getSizeOfFolder:(NSString *)folderPath {
+    NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:folderPath error:nil];
+    NSEnumerator *contentsEnumurator = [contents objectEnumerator];
+    
+    NSString *file;
+    unsigned long long folderSize = 0;
+    
+    while (file = [contentsEnumurator nextObject]) {
+        NSDictionary *fileAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:[folderPath stringByAppendingPathComponent:file] error:nil];
+        folderSize += [[fileAttributes objectForKey:NSFileSize] intValue];
+    }
+    return folderSize;
 }
 
 @end
