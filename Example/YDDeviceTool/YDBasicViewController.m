@@ -8,17 +8,8 @@
 
 #import "YDBasicViewController.h"
 #import <YDDeviceTool/YDDeviceTool.h>
-
-@interface BasicInfo : NSObject
-
-@property (nonatomic, copy) NSString *infoKey;
-@property (nonatomic, strong) NSObject *infoValue;
-
-@end
-
-@implementation BasicInfo
-@end
-
+#import "ContactAuthVC.h"
+#import "BasicInfo.h"
 
 @interface YDBasicViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -125,11 +116,6 @@
     info.infoValue = infoValue;
     NSLog(@"%@---%@", infoKey, infoValue);
     [self.infoArray addObject:info];
-}
-
-#pragma mark - BatteryInfoDelegate
-- (void)batteryStatusUpdated {
-#warning 当电池状态改变时，会调用该方法，应该在此处reload对应的cell，进行更新UI操作
 }
 
 #pragma mark - UITableViewDelegate && UITableViewDatasource
