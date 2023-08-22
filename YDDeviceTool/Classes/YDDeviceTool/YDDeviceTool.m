@@ -20,6 +20,8 @@
 #import <SystemConfiguration/CaptiveNetwork.h>
 #import <AVFoundation/AVFoundation.h>
 
+#include <mach/mach.h> // 获取CPU信息所需要引入的头文件
+
 @implementation YDDeviceTool
 
 //获取idfa
@@ -82,13 +84,33 @@
     if ([deviceString isEqualToString:@"iPhone11,4"])   return @"iPhone XS Max";
     if ([deviceString isEqualToString:@"iPhone11,6"])   return @"iPhone XS Max";
     if ([deviceString isEqualToString:@"iPhone11,8"])   return @"iPhone XR";
-
+    if ([deviceString isEqualToString:@"iPhone11,8"])  return @"iPhone XR";
+    if ([deviceString isEqualToString:@"iPhone12,1"])  return @"iPhone 11";
+    if ([deviceString isEqualToString:@"iPhone12,3"])  return @"iPhone 11 Pro";
+    if ([deviceString isEqualToString:@"iPhone12,5"])  return @"iPhone 11 Pro Max";
+    if ([deviceString isEqualToString:@"iPhone12,8"])  return @"iPhone SE (2nd generation)";
+    if ([deviceString isEqualToString:@"iPhone13,1"])  return @"iPhone 12 mini";
+    if ([deviceString isEqualToString:@"iPhone13,2"])  return @"iPhone 12";
+    if ([deviceString isEqualToString:@"iPhone13,3"])  return @"iPhone 12 Pro";
+    if ([deviceString isEqualToString:@"iPhone13,4"])  return @"iPhone 12 Pro Max";
+    if ([deviceString isEqualToString:@"iPhone14,4"]) return @"iPhone 13 mini";
+    if ([deviceString isEqualToString:@"iPhone14,5"]) return @"iPhone 13";
+    if ([deviceString isEqualToString:@"iPhone14,2"]) return @"iPhone 13 Pro";
+    if ([deviceString isEqualToString:@"iPhone14,3"]) return @"iPhone 13 Pro Max";
+    if ([deviceString isEqualToString:@"iPhone14,6"])   return @"iPhone SE (3rd gen)";
+    if ([deviceString isEqualToString:@"iPhone14,7"])   return @"iPhone 14";
+    if ([deviceString isEqualToString:@"iPhone14,8"])   return @"iPhone 14 Plus";
+    if ([deviceString isEqualToString:@"iPhone15,2"])       return @"iPhone 14 Pro";
+    if ([deviceString isEqualToString:@"iPhone15,3"])       return @"iPhone 14 Pro Max";
+    
+    
     if ([deviceString isEqualToString:@"iPod1,1"])      return @"iPod Touch 1G";
     if ([deviceString isEqualToString:@"iPod2,1"])      return @"iPod Touch 2G";
     if ([deviceString isEqualToString:@"iPod3,1"])      return @"iPod Touch 3G";
     if ([deviceString isEqualToString:@"iPod4,1"])      return @"iPod Touch 4G";
     if ([deviceString isEqualToString:@"iPod5,1"])      return @"iPod Touch (5 Gen)";
-    
+    if ([deviceString isEqualToString:@"iPod7,1"])     return @"iPod Touch 6G";
+
     if ([deviceString isEqualToString:@"iPad1,1"])      return @"iPad";
     if ([deviceString isEqualToString:@"iPad1,2"])      return @"iPad 3G";
     if ([deviceString isEqualToString:@"iPad2,1"])      return @"iPad 2 (WiFi)";
@@ -120,6 +142,91 @@
     if ([deviceString isEqualToString:@"iPad6,4"])      return @"iPad Pro 9.7";
     if ([deviceString isEqualToString:@"iPad6,7"])      return @"iPad Pro 12.9";
     if ([deviceString isEqualToString:@"iPad6,8"])      return @"iPad Pro 12.9";
+    if ([deviceString isEqualToString:@"iPad6,11"])    return @"iPad 5(WiFi)";
+    if ([deviceString isEqualToString:@"iPad6,12"])    return @"iPad 5(Cellular)";
+    if ([deviceString isEqualToString:@"iPad7,1"])     return @"iPad Pro 12.9 inch(2nd generation)(WiFi)";
+    if ([deviceString isEqualToString:@"iPad7,2"])     return @"iPad Pro 12.9 inch(2nd generation)(Cellular)";
+    if ([deviceString isEqualToString:@"iPad7,3"])     return @"iPad Pro 10.5 inch(WiFi)";
+    if ([deviceString isEqualToString:@"iPad7,4"])     return @"iPad Pro 10.5 inch(Cellular)";
+    if ([deviceString isEqualToString:@"iPad7,5"] ||
+        [deviceString isEqualToString:@"iPad7,6"])
+        return @"iPad 6";
+    
+    if ([deviceString isEqualToString:@"iPad7,11"] ||
+        [deviceString isEqualToString:@"iPad7,12"])
+        return @"iPad 10.2 inch (7th gen)";
+    
+    if ([deviceString isEqualToString:@"iPad8,1"] ||
+        [deviceString isEqualToString:@"iPad8,2"] ||
+        [deviceString isEqualToString:@"iPad8,3"] ||
+        [deviceString isEqualToString:@"iPad8,4"])
+        return @"iPad Pro 11 inch";
+    
+    if ([deviceString isEqualToString:@"iPad8,5"] ||
+        [deviceString isEqualToString:@"iPad8,6"] ||
+        [deviceString isEqualToString:@"iPad8,7"] ||
+        [deviceString isEqualToString:@"iPad8,8"])
+        return @"iPad Pro 12.9 inch (3rd gen)";
+    
+    if ([deviceString isEqualToString:@"iPad8,9"] ||
+        [deviceString isEqualToString:@"iPad8,10"])
+        return @"iPad Pro 11 inch (2th gen)";
+    
+    if ([deviceString isEqualToString:@"iPad8,11"] ||
+        [deviceString isEqualToString:@"iPad8,12"])
+        return @"iPad Pro 12.9 inch (4th gen)";
+    
+    if ([deviceString isEqualToString:@"iPad11,1"] ||
+        [deviceString isEqualToString:@"iPad11,2"])
+        return @"iPad mini (5th gen)";
+    
+    if ([deviceString isEqualToString:@"iPad11,3"] ||
+        [deviceString isEqualToString:@"iPad11,4"])
+        return @"iPad Air (3rd gen)";
+    
+    if ([deviceString isEqualToString:@"iPad11,6"] ||
+        [deviceString isEqualToString:@"iPad11,7"])
+        return @"iPad (8th gen)";
+    
+    if ([deviceString isEqualToString:@"iPad12,1"] ||
+        [deviceString isEqualToString:@"iPad12,2"])
+        return @"iPad (9th gen)";
+    
+    if ([deviceString isEqualToString:@"iPad13,1"] ||
+        [deviceString isEqualToString:@"iPad13,2"])
+        return @"iPad Air (4th gen)";
+    
+    if ([deviceString isEqualToString:@"iPad13,4"] ||
+        [deviceString isEqualToString:@"iPad13,5"] ||
+        [deviceString isEqualToString:@"iPad13,6"] ||
+        [deviceString isEqualToString:@"iPad13,7"])
+        return @"iPad Pro 11 inch (3th gen)";
+    
+    if ([deviceString isEqualToString:@"iPad13,8"] ||
+        [deviceString isEqualToString:@"iPad13,9"] ||
+        [deviceString isEqualToString:@"iPad13,10"] ||
+        [deviceString isEqualToString:@"iPad13,11"])
+        return @"iPad Pro 12.9 inch (5th gen)";
+    
+    if ([deviceString isEqualToString:@"iPad13,16"] ||
+        [deviceString isEqualToString:@"iPad13,17"])
+        return @"iPad Air (5th gen)";
+    
+    if ([deviceString isEqualToString:@"iPad13,18"] ||
+        [deviceString isEqualToString:@"iPad13,19"])
+        return @"iPad (10th gen)";
+    
+    if ([deviceString isEqualToString:@"iPad14,1"] ||
+        [deviceString isEqualToString:@"iPad14,2"])
+        return @"iPad mini (6th gen)";
+    
+    if ([deviceString isEqualToString:@"iPad14,3"] ||
+        [deviceString isEqualToString:@"iPad14,4"])
+        return @"iPad Pro 11 inch (4th gen)";
+    
+    if ([deviceString isEqualToString:@"iPad14,5"] ||
+        [deviceString isEqualToString:@"iPad14,6"])
+        return @"iPad Pro 12.9 inch (6th gen)";
     
     if ([deviceString isEqualToString:@"i386"])         return @"Simulator";
     if ([deviceString isEqualToString:@"x86_64"])       return @"Simulator";
@@ -131,22 +238,6 @@
 + (NSString *)getDeviceName
 {
     return [UIDevice currentDevice].name;
-}
-
-//获取磁盘大小
-+ (long)getTotalDiskSize
-{
-    NSDictionary *systemAttributes = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:nil];
-    NSNumber *diskTotalSize = [systemAttributes objectForKey:NSFileSystemSize];
-    return (long)(diskTotalSize.floatValue / 1024.f / 1024.f);
-}
-
-//获取磁盘剩余空间
-+ (long)getUsableDiskSize
-{
-    NSDictionary *systemAttributes = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:nil];
-    NSNumber *diskFreeSize = [systemAttributes objectForKey:NSFileSystemFreeSize];
-    return (long)(diskFreeSize.floatValue / 1024.f / 1024.f);
 }
 
 //获取电量
@@ -412,6 +503,190 @@
         return YES;
     }
     return NO;
+}
+
+
+
+
+
+// ==================
+
+
+#pragma mark - Disk
++ (NSString *)getApplicationSize {
+    unsigned long long documentSize   =  [self _getSizeOfFolder:[self _getDocumentPath]];
+    unsigned long long librarySize   =  [self _getSizeOfFolder:[self _getLibraryPath]];
+    unsigned long long cacheSize =  [self _getSizeOfFolder:[self _getCachePath]];
+    
+    unsigned long long total = documentSize + librarySize + cacheSize;
+    
+    NSString *applicationSize = [NSByteCountFormatter stringFromByteCount:total countStyle:NSByteCountFormatterCountStyleFile];
+    return applicationSize;
+}
+
++ (int64_t)getTotalDiskSpace {
+    NSError *error = nil;
+    NSDictionary *attrs = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:&error];
+    if (error) return -1;
+    int64_t space =  [[attrs objectForKey:NSFileSystemSize] longLongValue];
+    if (space < 0) space = -1;
+    return space;
+}
+
++ (int64_t)getFreeDiskSpace {
+    
+//    if (@available(iOS 11.0, *)) {
+//        NSError *error = nil;
+//        NSURL *testURL = [NSURL URLWithString:NSHomeDirectory()];
+//
+//        NSDictionary *dict = [testURL resourceValuesForKeys:@[NSURLVolumeAvailableCapacityForImportantUsageKey] error:&error];
+//
+//        return (int64_t)dict[NSURLVolumeAvailableCapacityForImportantUsageKey];
+//
+//
+//    } else {
+        NSError *error = nil;
+        NSDictionary *attrs = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:&error];
+        if (error) return -1;
+        int64_t space =  [[attrs objectForKey:NSFileSystemFreeSize] longLongValue];
+        if (space < 0) space = -1;
+        return space;
+//    }
+    
+}
+
++ (int64_t)getUsedDiskSpace {
+    int64_t totalDisk = [self getTotalDiskSpace];
+    int64_t freeDisk = [self getFreeDiskSpace];
+    if (totalDisk < 0 || freeDisk < 0) return -1;
+    int64_t usedDisk = totalDisk - freeDisk;
+    if (usedDisk < 0) usedDisk = -1;
+    return usedDisk;
+}
+
+#pragma mark - Memory
++ (int64_t)getTotalMemory {
+    int64_t totalMemory = [[NSProcessInfo processInfo] physicalMemory];
+    if (totalMemory < -1) totalMemory = -1;
+    return totalMemory;
+}
+
++ (int64_t)getActiveMemory {
+    mach_port_t host_port = mach_host_self();
+    mach_msg_type_number_t host_size = sizeof(vm_statistics_data_t) / sizeof(integer_t);
+    vm_size_t page_size;
+    vm_statistics_data_t vm_stat;
+    kern_return_t kern;
+    
+    kern = host_page_size(host_port, &page_size);
+    if (kern != KERN_SUCCESS) return -1;
+    kern = host_statistics(host_port, HOST_VM_INFO, (host_info_t)&vm_stat, &host_size);
+    if (kern != KERN_SUCCESS) return -1;
+    return vm_stat.active_count * page_size;
+}
+
++ (int64_t)getInActiveMemory {
+    mach_port_t host_port = mach_host_self();
+    mach_msg_type_number_t host_size = sizeof(vm_statistics_data_t) / sizeof(integer_t);
+    vm_size_t page_size;
+    vm_statistics_data_t vm_stat;
+    kern_return_t kern;
+    
+    kern = host_page_size(host_port, &page_size);
+    if (kern != KERN_SUCCESS) return -1;
+    kern = host_statistics(host_port, HOST_VM_INFO, (host_info_t)&vm_stat, &host_size);
+    if (kern != KERN_SUCCESS) return -1;
+    return vm_stat.inactive_count * page_size;
+}
+
++ (int64_t)getFreeMemory {
+    mach_port_t host_port = mach_host_self();
+    mach_msg_type_number_t host_size = sizeof(vm_statistics_data_t) / sizeof(integer_t);
+    vm_size_t page_size;
+    vm_statistics_data_t vm_stat;
+    kern_return_t kern;
+    
+    kern = host_page_size(host_port, &page_size);
+    if (kern != KERN_SUCCESS) return -1;
+    kern = host_statistics(host_port, HOST_VM_INFO, (host_info_t)&vm_stat, &host_size);
+    if (kern != KERN_SUCCESS) return -1;
+    return vm_stat.free_count * page_size;
+}
+
++ (int64_t)getUsedMemory {
+    mach_port_t host_port = mach_host_self();
+    mach_msg_type_number_t host_size = sizeof(vm_statistics_data_t) / sizeof(integer_t);
+    vm_size_t page_size;
+    vm_statistics_data_t vm_stat;
+    kern_return_t kern;
+    
+    kern = host_page_size(host_port, &page_size);
+    if (kern != KERN_SUCCESS) return -1;
+    kern = host_statistics(host_port, HOST_VM_INFO, (host_info_t)&vm_stat, &host_size);
+    if (kern != KERN_SUCCESS) return -1;
+    return page_size * (vm_stat.active_count + vm_stat.inactive_count + vm_stat.wire_count);
+}
+
++ (int64_t)getWiredMemory {
+    mach_port_t host_port = mach_host_self();
+    mach_msg_type_number_t host_size = sizeof(vm_statistics_data_t) / sizeof(integer_t);
+    vm_size_t page_size;
+    vm_statistics_data_t vm_stat;
+    kern_return_t kern;
+    
+    kern = host_page_size(host_port, &page_size);
+    if (kern != KERN_SUCCESS) return -1;
+    kern = host_statistics(host_port, HOST_VM_INFO, (host_info_t)&vm_stat, &host_size);
+    if (kern != KERN_SUCCESS) return -1;
+    return vm_stat.wire_count * page_size;
+}
+
++ (int64_t)getPurgableMemory {
+    mach_port_t host_port = mach_host_self();
+    mach_msg_type_number_t host_size = sizeof(vm_statistics_data_t) / sizeof(integer_t);
+    vm_size_t page_size;
+    vm_statistics_data_t vm_stat;
+    kern_return_t kern;
+    
+    kern = host_page_size(host_port, &page_size);
+    if (kern != KERN_SUCCESS) return -1;
+    kern = host_statistics(host_port, HOST_VM_INFO, (host_info_t)&vm_stat, &host_size);
+    if (kern != KERN_SUCCESS) return -1;
+    return vm_stat.purgeable_count * page_size;
+}
+
+
+#pragma mark -  Method
++ (NSString *)_getDocumentPath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *basePath = [paths firstObject];
+    return basePath;
+}
+
++ (NSString *)_getLibraryPath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+    NSString *basePath = [paths firstObject];
+    return basePath;
+}
+
++ (NSString *)_getCachePath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString *basePath = [paths firstObject];
+    return basePath;
+}
+
++ (unsigned long long)_getSizeOfFolder:(NSString *)folderPath {
+    NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:folderPath error:nil];
+    NSEnumerator *contentsEnumurator = [contents objectEnumerator];
+    
+    NSString *file;
+    unsigned long long folderSize = 0;
+    
+    while (file = [contentsEnumurator nextObject]) {
+        NSDictionary *fileAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:[folderPath stringByAppendingPathComponent:file] error:nil];
+        folderSize += [[fileAttributes objectForKey:NSFileSize] intValue];
+    }
+    return folderSize;
 }
 
 @end

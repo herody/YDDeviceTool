@@ -1,0 +1,6 @@
+framework module YDDeviceTool {
+  umbrella header "YDDeviceTool-umbrella.h"
+
+  export *
+  module * { export * }
+}
